@@ -1,0 +1,22 @@
+:root {
+    --dark-grey: #333333
+    --light-grey: #808080
+    --yellow: #FFB612
+    --red: #dc0a17
+    --green: #2FC022
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  transition: 0.3s;
+
+  height: 100vh;
+}
