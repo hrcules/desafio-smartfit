@@ -1,5 +1,13 @@
+import Forms from "./components/Forms";
+import Header from "./components/Header";
+
 function App() {
-  return <h1>Hello world!</h1>;
+  return (
+    <>
+      <Header />
+      <Forms />
+    </>
+  );
 }
 
 export default App;

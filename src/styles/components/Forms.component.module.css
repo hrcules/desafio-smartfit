@@ -1,0 +1,105 @@
+.formGroup {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+
+  max-width: 50%;
+  width: 100%;
+  margin: 0 auto;
+
+  padding: 24px;
+
+  border: 2px solid var(--light-text);
+  border-radius: 14px;
+}
+
+.formGroup .formIcon {
+  font-size: 14px;
+  color: var(--light-grey);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.formGroup .formIcon img {
+  height: 24px;
+}
+
+.formGroup h3 {
+  font-size: 18px;
+  color: var(--medium-text);
+  font-weight: 400;
+  margin-top: 24px;
+  margin-bottom: 14px;
+}
+
+.formGroup .radioWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 8px 4px;
+
+  border-top: 1px solid var(--light-text);
+  position: relative;
+  color: var(--medium-text);
+}
+
+.formGroup .radioWrapper:nth-last-child(3) {
+  border-bottom: 1px solid var(--light-text);
+}
+
+.formGroup .radioWrapper span {
+  position: absolute;
+  right: 0;
+}
+.formGroup .radioWrapper label {
+  margin-left: 8px;
+}
+
+.formGroup .btnWrapper {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.formGroup .btnWrapper .btn {
+  font-size: 14px;
+  border-radius: 4px;
+  color: var(--dark-grey);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 12px;
+  width: 25%;
+  cursor: pointer;
+}
+
+.formGroup .btnPrimary {
+  background-color: var(--yellow);
+  border: none;
+}
+.formGroup .btnSecundary {
+  background-color: transparent;
+  border: 1px solid var(--light-text);
+}
+
+.formGroup .checkboxWrapper {
+  color: var(--light-grey);
+  margin: 32px 0;
+  position: relative;
+  width: 100%;
+}
+
+.formGroup .checkboxWrapper span {
+  position: absolute;
+  right: 0;
+}
+
+.formGroup .checkboxWrapper label {
+  margin-left: 8px;
+}
