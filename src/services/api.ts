@@ -10,10 +10,10 @@ const request = axios.create({
 
 export const getAllUnits = async () => {
   try {
-    const response: UnitsResponse = await request.get("locations.json");
-
-    console.log(response.data);
+    const { data }: UnitsResponse = await request.get("locations.json");
+    return data;
   } catch (err) {
     console.log(err);
+    return undefined;
   }
 };

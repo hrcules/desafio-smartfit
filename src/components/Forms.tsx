@@ -1,8 +1,9 @@
 import styles from "../styles/components/Forms.component.module.css";
 import iconHour from "../assets/icon-hour.png";
 import { useForm } from "react-hook-form";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getAllUnits } from "../services/api";
+import { Location } from "../utils/types/location.interface";
 
 type FormProps = {
   hour: string;
@@ -10,11 +11,25 @@ type FormProps = {
 };
 
 function Forms() {
-  const { register, handleSubmit, reset } = useForm<FormProps>();
+  const { register, handleSubmit, reset } = useForm<FormProps>({
+    defaultValues: {
+      showClosed: true,
+    },
+  });
 
-  const results = 0;
+  const [results, setResults] = useState<Location[]>([]);
+  const [filteredResults, setfilteredResults] = useState<Location[]>([]);
 
   const onSubmit = (data: FormProps) => {
+    const { showClosed, hour } = data;
+    if (!showClosed) {
+      const filteringClosedUnits = filteredResults.filter(
+        (location) => location.opened === true
+      );
+      setfilteredResults(filteringClosedUnits);
+    } else {
+      setfilteredResults(results);
+    }
     console.log(data);
   };
 
@@ -23,7 +38,16 @@ function Forms() {
   };
 
   useEffect(() => {
-    getAllUnits();
+    const getAllLocations = async () => {
+      const allUnits = await getAllUnits();
+
+      if (allUnits) {
+        setResults(allUnits.locations);
+        setfilteredResults(allUnits.locations);
+      }
+    };
+
+    getAllLocations();
   }, []);
 
   return (
@@ -63,7 +87,7 @@ function Forms() {
           <label htmlFor="showClosed">Exibir unidades fechadas</label>
         </div>
 
-        <span>Resultados encontrados: {results}</span>
+        <span>Resultados encontrados: {filteredResults.length}</span>
       </div>
 
       <div className={styles.btnWrapper}>
