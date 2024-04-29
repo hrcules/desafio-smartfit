@@ -11,6 +11,7 @@ function Header() {
       <div className={styles.textContainer}>
         <h1>
           REABERTURA <br /> SMART FIT
+          <div className={styles.headingBorder} />
         </h1>
         <p>
           O horário de funcionamento das nossas unidades está seguindo os

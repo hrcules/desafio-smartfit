@@ -91,15 +91,79 @@
 .formGroup .checkboxWrapper {
   color: var(--light-grey);
   margin: 32px 0;
-  position: relative;
   width: 100%;
-}
-
-.formGroup .checkboxWrapper span {
-  position: absolute;
-  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .formGroup .checkboxWrapper label {
   margin-left: 8px;
+}
+
+@media screen and (max-width: 320px) {
+  .formGroup {
+    max-width: 90%;
+  }
+  .checkboxWrapper {
+    flex-direction: column;
+  }
+
+  .formGroup .btnWrapper {
+    flex-direction: column;
+  }
+  .formGroup .btnWrapper .btn {
+    width: 100%;
+  }
+}
+
+/* Media query para smartphones médios */
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .formGroup {
+    max-width: 90%;
+  }
+
+  .checkboxWrapper {
+    flex-direction: column;
+  }
+
+  .formGroup .btnWrapper {
+    flex-direction: column;
+  }
+  .formGroup .btnWrapper .btn {
+    width: 100%;
+  }
+}
+
+/* Media query para smartphones grandes */
+@media screen and (min-width: 376px) and (max-width: 414px) {
+  .formGroup {
+    max-width: 90%;
+  }
+  .checkboxWrapper {
+    flex-direction: column;
+  }
+
+  .formGroup .btnWrapper {
+    flex-direction: column;
+  }
+  .formGroup .btnWrapper .btn {
+    width: 100%;
+  }
+}
+
+/* Media query para tablets em modo retrato */
+@media screen and (min-width: 768px) and (max-width: 768px) {
+}
+
+/* Media query para tablets em modo paisagem */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+}
+
+/* Media query para desktops pequenos */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+}
+
+/* Media query para desktops grandes */
+@media screen and (min-width: 1367px) {
 }

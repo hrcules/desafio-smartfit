@@ -29,7 +29,7 @@
   justify-content: flex-start;
   align-items: flex-start;
 
-  padding: 0 478px;
+  padding: 0 25%;
 }
 
 .textContainer h1 {
@@ -37,6 +37,34 @@
   color: var(--dark-grey);
 }
 
+.headingBorder {
+  height: 8px;
+  width: 40%;
+  background-color: var(--dark-grey);
+  margin: 8px 0 24px;
+}
+
 .textContainer p {
   color: var(--light-grey);
+  text-align: justify;
+}
+
+@media screen and (max-width: 320px) {
+  .textContainer {
+    padding: 0 5%;
+  }
+}
+
+/* Media query para smartphones médios */
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .textContainer {
+    padding: 0 5%;
+  }
+}
+
+/* Media query para smartphones grandes */
+@media screen and (min-width: 376px) and (max-width: 414px) {
+  .textContainer {
+    padding: 0 5%;
+  }
 }
