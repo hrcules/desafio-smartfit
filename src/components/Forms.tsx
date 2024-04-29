@@ -1,6 +1,8 @@
 import styles from "../styles/components/Forms.component.module.css";
 import iconHour from "../assets/icon-hour.png";
 import { useForm } from "react-hook-form";
+import { useEffect } from "react";
+import { getAllUnits } from "../services/api";
 
 type FormProps = {
   hour: string;
@@ -19,6 +21,10 @@ function Forms() {
   const onClean = () => {
     reset();
   };
+
+  useEffect(() => {
+    getAllUnits();
+  }, []);
 
   return (
     <form className={styles.formGroup} onSubmit={handleSubmit(onSubmit)}>
