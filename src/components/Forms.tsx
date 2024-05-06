@@ -21,7 +21,7 @@ function Forms() {
   const [filteredResults, setfilteredResults] = useState<Location[]>([]);
 
   const onSubmit = (data: FormProps) => {
-    const { showClosed, hour } = data;
+    const { showClosed } = data;
     if (!showClosed) {
       const filteringClosedUnits = filteredResults.filter(
         (location) => location.opened === true
